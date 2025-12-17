@@ -1,0 +1,67 @@
+/* --- CONFIGURAÇÃO GERAL DA PÁGINA --- */
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  
+  /* Isso separa os botões um do outro */
+  gap: 20px; 
+}
+
+/* --- ESTILO DOS BOTÕES (O que estava faltando) --- */
+.activate {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  background-color: #3498db; /* Azul original */
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  font-weight: bold;
+}
+
+/* Esconde os ícones inicialmente */
+.icon-load, .icon-check, .icon-error {
+  display: none;
+}
+
+/* --- ESTADO: LOADING (Carregando) --- */
+.activate.loading {
+  background-color: #f1c40f; /* Amarelo */
+  pointer-events: none;
+  padding-left: 20px; 
+}
+
+.activate.loading .btn-text {
+  display: none;
+}
+
+.activate.loading .icon-load {
+  display: inline-block;
+}
+
+/* --- ESTADO: DONE (Sucesso) --- */
+.activate.done {
+  background-color: #2ecc71; /* Verde */
+}
+
+.activate.done .icon-load {
+  display: none;
+}
+
+.activate.done .icon-check {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.activate.done .btn-text {
+  display: inline-block;
+}
